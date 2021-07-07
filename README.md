@@ -56,6 +56,10 @@ https://twitter.com/_developit/status/1090364879377260544
 | netflix | `service` | **Optional**| service to call when netflix button pressed
 | prime_video | `service` | **Optional**| service to call when prime video button pressed
 | youtube | `service` | **Optional**| service to call when youtube button pressed
+| hulu | `service` | **Optional**| service to call when hulu button pressed
+| apple | `service` | **Optional**| service to call when apple button pressed
+| hbo | `service` | **Optional**| service to call when hbo button pressed
+| disney | `service` | **Optional**| service to call when disney button pressed
 
 ## `service` Options
 | Name | Type | Requirement | Description

@@ -313,7 +313,11 @@ class TVCardServices extends LitElement {
           ${
             this._config.netflix ||
             this._config.prime_video ||
-            this._config.youtube
+            this._config.youtube || 
+            this._config.hulu || 
+            this._config.apple || 
+            this._config.hbo || 
+            this._config.disney
               ? html`
                   <div class="row">
                     ${this._config.netflix ?
@@ -343,6 +347,46 @@ class TVCardServices extends LitElement {
                           @click="${this.handleActionClick}"
                           icon="mdi:youtube"
                           title="Youtube"
+                        ></ha-icon-button>
+                      `
+                    : emptyButton}
+                    ${this._config.hulu ?
+                      html`
+                        <ha-icon-button
+                          .action="${"hulu"}"
+                          @click="${this.handleActionClick}"
+                          icon="mdi:hulu"
+                          title="Hulu"
+                        ></ha-icon-button>
+                      `
+                    : emptyButton}
+                    ${this._config.apple ?
+                      html`
+                        <ha-icon-button
+                          .action="${"apple"}"
+                          @click="${this.handleActionClick}"
+                          icon="mdi:apple"
+                          title="Apple"
+                        ></ha-icon-button>
+                      `
+                    : emptyButton}
+                    ${this._config.hbo ?
+                      html`
+                        <ha-icon-button
+                          .action="${"hbo"}"
+                          @click="${this.handleActionClick}"
+                          icon="mdi:alpha-h-box"
+                          title="HBO"
+                        ></ha-icon-button>
+                      `
+                    : emptyButton}
+                    ${this._config.disney ?
+                      html`
+                        <ha-icon-button
+                          .action="${"disney"}"
+                          @click="${this.handleActionClick}"
+                          icon="mdi:castle"
+                          title="Disney"
                         ></ha-icon-button>
                       `
                     : emptyButton}
@@ -424,7 +468,11 @@ class TVCardServices extends LitElement {
       "forward",
       "netflix",
       "prime_video",
-      "youtube"
+      "youtube",
+      "hulu",
+      "apple",
+      "hbo",
+      "disney"
     ];
 
     if (
