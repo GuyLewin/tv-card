@@ -44,6 +44,8 @@ https://twitter.com/_developit/status/1090364879377260544
 | down | `service` | **Optional**| service to call when down button pressed
 | reverse | `service` | **Optional**| service to call when reverse button pressed
 | play | `service` | **Optional**| service to call when play button pressed
+| pause | `service` | **Optional**| service to call when pause button pressed
+| play_pause | `service` | **Optional**| service to call when play / pause button pressed
 | forward | `service` | **Optional**| service to call when forward button pressed
 | source | `service` | **Optional**| service to call when source button pressed
 | channelup | `service` | **Optional**| service to call when channelup button pressed

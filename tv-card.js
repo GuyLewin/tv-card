@@ -213,7 +213,7 @@ class TVCardServices extends LitElement {
           </div>
 
           ${
-            this._config.reverse || this._config.play || this._config.forward
+            this._config.reverse || this._config.play_pause || this._config.forward
               ? html`
                   <div class="row">
                     ${this._config.reverse
@@ -226,10 +226,10 @@ class TVCardServices extends LitElement {
                           ></ha-icon-button>
                         `
                       : emptyButton}
-                    ${this._config.play
+                    ${this._config.play_pause
                       ? html`
                           <ha-icon-button
-                            .action="${"play"}"
+                            .action="${"play_pause"}"
                             @click="${this.handleActionClick}"
                             icon="mdi:play-pause"
                             title="Play/Pause"
@@ -243,6 +243,35 @@ class TVCardServices extends LitElement {
                             @click="${this.handleActionClick}"
                             icon="mdi:fast-forward"
                             title="Fast-Forward"
+                          ></ha-icon-button>
+                        `
+                      : emptyButton}
+                  </div>
+                `
+              : ""
+          }
+
+          ${
+            this._config.play || this._config.pause
+              ? html`
+                  <div class="row">
+                    ${this._config.play
+                      ? html`
+                          <ha-icon-button
+                            .action="${"play"}"
+                            @click="${this.handleActionClick}"
+                            icon="mdi:play"
+                            title="Play"
+                          ></ha-icon-button>
+                        `
+                      : emptyButton}
+                    ${this._config.pause
+                      ? html`
+                          <ha-icon-button
+                            .action="${"pause"}"
+                            @click="${this.handleActionClick}"
+                            icon="mdi:pause"
+                            title="Pause"
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -390,6 +419,8 @@ class TVCardServices extends LitElement {
       "down",
       "reverse",
       "play",
+      "pause",
+      "play_pause",
       "forward",
       "netflix",
       "prime_video",
