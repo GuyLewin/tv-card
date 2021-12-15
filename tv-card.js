@@ -25,6 +25,10 @@ mdiVolumeMinus,
 mdiVolumePlus,
 mdiNetflix,
 mdiYoutube,
+mdiHulu,
+mdiApple,
+mdiAlphaHBox,
+mdiCastle,
 } from "https://unpkg.com/@mdi/js@6.4.95/mdi.js?module"
 
 // Taken from mdi v5.9.55
@@ -212,7 +216,11 @@ class TVCardServices extends LitElement {
           ${
             this._config.netflix ||
             this._config.prime_video ||
-            this._config.youtube
+            this._config.youtube ||
+            this._config.hulu || 
+            this._config.apple || 
+            this._config.hbo || 
+            this._config.disney
               ? html`
                   <div class="row">
                     ${this._config.netflix ?
@@ -245,6 +253,50 @@ class TVCardServices extends LitElement {
                           icon="mdi:youtube"
                           .path=${mdiYoutube}
                           title="Youtube"
+                        ></ha-icon-button>
+                      `
+                    : emptyButton}
+                    ${this._config.hulu ?
+                      html`
+                        <ha-icon-button
+                          .action="${"hulu"}"
+                          @click="${this.handleActionClick}"
+                          icon="mdi:hulu"
+                          .path=${mdiHulu}
+                          title="Hulu"
+                        ></ha-icon-button>
+                      `
+                    : emptyButton}
+                    ${this._config.apple ?
+                      html`
+                        <ha-icon-button
+                          .action="${"apple"}"
+                          @click="${this.handleActionClick}"
+                          icon="mdi:apple"
+                          .path=${mdiApple}
+                          title="Apple"
+                        ></ha-icon-button>
+                      `
+                    : emptyButton}
+                    ${this._config.hbo ?
+                      html`
+                        <ha-icon-button
+                          .action="${"hbo"}"
+                          @click="${this.handleActionClick}"
+                          icon="mdi:alpha-h-box"
+                          .path=${mdiAlphaHBox}
+                          title="HBO"
+                        ></ha-icon-button>
+                      `
+                    : emptyButton}
+                    ${this._config.disney ?
+                      html`
+                        <ha-icon-button
+                          .action="${"disney"}"
+                          @click="${this.handleActionClick}"
+                          icon="mdi:castle"
+                          .path=${mdiCastle}
+                          title="Disney"
                         ></ha-icon-button>
                       `
                     : emptyButton}
@@ -396,91 +448,6 @@ class TVCardServices extends LitElement {
                       .path=${mdiVolumePlus}
                       title="Volume Up"
                     ></ha-icon-button>
-                  </div>
-                `
-              : ""
-          }
-
-          ${
-            this._config.netflix ||
-            this._config.prime_video ||
-            this._config.youtube || 
-            this._config.hulu || 
-            this._config.apple || 
-            this._config.hbo || 
-            this._config.disney
-              ? html`
-                  <div class="row">
-                    ${this._config.netflix ?
-                      html`
-                        <ha-icon-button
-                          .action="${"netflix"}"
-                          @click="${this.handleActionClick}"
-                          icon="mdi:netflix"
-                          title="Netflix"
-                        ></ha-icon-button>
-                      `
-                    : emptyButton}
-                    ${this._config.prime_video ?
-                      html`
-                        <ha-icon-button
-                          .action="${"prime_video"}"
-                          @click="${this.handleActionClick}"
-                          icon="mdi:amazon"
-                          title="Prime Video"
-                        ></ha-icon-button>
-                      `
-                    : emptyButton}
-                    ${this._config.youtube ?
-                      html`
-                        <ha-icon-button
-                          .action="${"youtube"}"
-                          @click="${this.handleActionClick}"
-                          icon="mdi:youtube"
-                          title="Youtube"
-                        ></ha-icon-button>
-                      `
-                    : emptyButton}
-                    ${this._config.hulu ?
-                      html`
-                        <ha-icon-button
-                          .action="${"hulu"}"
-                          @click="${this.handleActionClick}"
-                          icon="mdi:hulu"
-                          title="Hulu"
-                        ></ha-icon-button>
-                      `
-                    : emptyButton}
-                    ${this._config.apple ?
-                      html`
-                        <ha-icon-button
-                          .action="${"apple"}"
-                          @click="${this.handleActionClick}"
-                          icon="mdi:apple"
-                          title="Apple"
-                        ></ha-icon-button>
-                      `
-                    : emptyButton}
-                    ${this._config.hbo ?
-                      html`
-                        <ha-icon-button
-                          .action="${"hbo"}"
-                          @click="${this.handleActionClick}"
-                          icon="mdi:alpha-h-box"
-                          title="HBO"
-                        ></ha-icon-button>
-                      `
-                    : emptyButton}
-                    ${this._config.disney ?
-                      html`
-                        <ha-icon-button
-                          .action="${"disney"}"
-                          @click="${this.handleActionClick}"
-                          icon="mdi:castle"
-                          title="Disney"
-                        ></ha-icon-button>
-                      `
-                    : emptyButton}
                   </div>
                 `
               : ""
